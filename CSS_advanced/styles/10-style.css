@@ -27,7 +27,7 @@
 	--line-height-base: 1.5;
 	--line-height-big: 1.8;
 
-	/* Section Header*/
+	/* Section Header */
 	--section-header-align: center;
 }
 
@@ -58,14 +58,10 @@ a {
 	display: none;
 }
 
-.card-category {
+.card-category, .section-tagline {
 	color: var(--color-primary);
 }
 
 .section-header-align {
 	text-align: var(--section-header-align);
-}
-
-.section-tagline {
-	color: var(--color-primary);
 }
