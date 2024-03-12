@@ -10,7 +10,7 @@
 	/* Font Family */
 	--font-family-base: Helvetica Neue, Helvetica, Arial, sans-serif;
 	--font-family-title: Helvetica Neue, Helvetica, Arial, sans-serif;
-	
+
 	/* Font Size */
 	--font-size-small: 1.2rem;
 	--font-size-medium: 1.6rem;
@@ -33,6 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family-title);
 }
+
 a {
 	color: var(--text-color);
 }
