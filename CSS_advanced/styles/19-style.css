@@ -102,11 +102,6 @@ a:active {
 	color: var(--color-primary);
 }
 
-.section-tagline {
-	color: var(--color-primary);
-	margin: var(--section-tagline-margin);
-}
-
 .section {
 	padding: var(--section-padding);
 }
