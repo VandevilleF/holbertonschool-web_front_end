@@ -1,0 +1,16 @@
+/* Color */
+$text-color: #3D3D3D;
+$background-c: #6D6D6D;
+
+body {
+	color: $text-color;
+	background-color: $background-c;
+}
+
+p {
+	color: $text-color;
+}
+
+h2 {
+	background-color: $background-c;
+}
