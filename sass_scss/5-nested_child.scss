@@ -1,0 +1,10 @@
+/* Nested */
+$text-body: #3D3D3D;
+$text-red: #FF0000;
+
+body {
+	color: $text-body;
+	> .red {
+		color: $text-red;
+	}
+}
