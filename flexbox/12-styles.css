@@ -382,22 +382,6 @@
     padding: 5rem 0;
   }
 
-  /* Post
-    ============================= */
-
-  .post {
-    display: flex;
-  }
-
-  .post-content {
-    width: 100%;
-  }
-
-  .post-aside {
-    order: 1;
-    min-width: 20%;
-  }
-
   /* Section Latest news ============================= */
 
   .section-latest-news .row {
@@ -576,3 +560,19 @@
     padding: 7rem 0 0;
     z-index: 2;
   }
+
+  /* Post
+  ============================= */
+
+  .post {
+    display: flex;
+}
+
+  .post-content {
+    width: 100%;
+}
+
+  .post-aside {
+    order: -1;
+    min-width: 20%;
+}
