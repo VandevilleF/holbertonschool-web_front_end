@@ -964,12 +964,14 @@ input:not(:placeholder-shown) ~ .form-field-icon::after {
 
   /*** SEARCH FORM ***/
 
+  /* Target the form-search class */
   .form-search {
 	display: block;
 	padding: .5rem 0;
 	position: relative;
   }
 
+  /* Target the search-button class inside the form-search class */
   .form-search .search-button {
 	display: inline-block;
 	background: transparent;
@@ -978,12 +980,14 @@ input:not(:placeholder-shown) ~ .form-field-icon::after {
 	padding: 0;
   }
 
+  /* Target the search-icon class inside the search-button class */
   .search-button .search-icon {
 	fill: var(--color-white);
 	width: 1.5rem;
 	height: 1.5rem;
   }
 
+  /* Target the input type search inside the form-search class */
   .form-search input[type="search"] {
 	display: inline-block;
 	color: var(--color-white);
@@ -1000,6 +1004,7 @@ input:not(:placeholder-shown) ~ .form-field-icon::after {
 	transition: width .4s cubic-bezier(0, 0.795, 0, 1);
   }
 
+  /* Target the focus state of input type search inside the form-search class */
   .form-search input[type="search"]:focus {
 	position: relative;
 	width: 15rem;
