@@ -43,7 +43,7 @@
 			const result = document.createElement("p");
 			result.appendChild(document.createTextNode(`You previously had ${cart} items in your cart`))
 			document.body.appendChild(result);
-	}
+		}
 		document.addEventListener("DOMContentLoaded", () => {
 			if (isStorageAvailable()) {
 				createStore();
