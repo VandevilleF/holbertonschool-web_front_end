@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<script>
+		const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+		function isStorageAvailable() {
+			try {
+				let test = 'test';
+				localStorage.setItem(test, test);
+				localStorage.removeItem(test);
+				return true;
+			} catch(e) {
+				return false;
+			}
+		}
+		function addItemToCart(item) {
+			console.log(`Ajout au panier : ${item}`);
+			localStorage.setItem(item, "true");
+		}
+		function createStore() {
+			const ul = document.createElement("ul");
+			document.body.appendChild(ul);
+			availableItems.forEach(item => {
+				let li = document.createElement("li");
+				li.appendChild(document.createTextNode(item));
+				ul.appendChild(li);
+
+				li.addEventListener("click", () => {
+					console.log(`Click détecté sur : ${item}`);
+					addItemToCart(item);
+				});
+			});
+		}
+		function displayCart() {
+			if (localStorage.length === 0) {
+				return;
+			}
+			let cart = localStorage.length;
+			const result = document.createElement("p");
+			result.appendChild(document.createTextNode(`You previously had ${cart} items in your cart`))
+			document.body.appendChild(result);
+	}
+		document.addEventListener("DOMContentLoaded", () => {
+			if (isStorageAvailable()) {
+				createStore();
+				displayCart();
+			} else {
+				alert("Sorry, your browser does not support Web storage. Try again with a better one");
+			}
+		});
+	</script>
+	<body>
+
+	</body>
+</html>
