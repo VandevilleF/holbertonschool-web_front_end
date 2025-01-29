@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Page Title</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+	<script>
+		function setCookiesAndShowWelcomeMessage() {
+			const firstname = document.getElementById("firstname").value;
+			const email = document.getElementById("email").value;
+			Cookies.set("firstname", firstname, { expires: 10, path: '/' });
+			Cookies.set("email", email, { expires: 10, path: '/' });
+			showWelcomeMessageOrForm();
+		}
+
+		function showForm() {
+			const form = document.getElementById("div-form");
+			const welcome = document.getElementById("welcome");
+			if (welcome.style.display === "block") {
+				welcome.style.display = "none";
+			}
+			form.style.display = "block";
+		}
+
+		function hideForm() {
+			const form = document.getElementById("div-form");
+			if (form.style.display === "block") {
+				form.style.display = "none";
+			}
+		}
+
+		function deleteCookiesAndShowForm() {
+			Cookies.remove("firstname");
+			Cookies.remove("email");
+			showForm();
+		}
+
+		function showWelcomeMessageOrForm() {
+			const firstname = Cookies.get("firstname");
+			const welcome = document.createElement("h1");
+			welcome.id = "welcome";
+			welcome.style.display = "block";
+			if (firstname && email) {
+				welcome.innerHTML = `
+					Welcome: ${firstname} <a onclick="deleteCookiesAndShowForm()" style="margin-left: 10px; font-style: italic; cursor: pointer;">(logout)</a>`;
+				document.body.appendChild(welcome);
+				hideForm();
+			} else {
+				showForm();
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div-form" style="display: block;">
+		<h2><b>Login to the website</b></h2>
+		<input type="text" id="firstname" placeholder="Firstname">
+		<input type="text" id="email" placeholder="Email">
+		<button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+	</div>
+</body>
+</html>
